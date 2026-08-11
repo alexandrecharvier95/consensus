@@ -7,7 +7,7 @@ def index() -> rx.Component:
         rx.vstack(
             rx.heading("Bienvenue sur Consensus", size="9"),
             rx.text(
-                "La plateforme collaborative de vote et de suivi des prix du carburant.",
+                "La plateforme de vote collaboratif et de suivi des prix du carburant.",
                 size="4",
                 color="gray",
             ),
