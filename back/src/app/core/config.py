@@ -13,7 +13,11 @@ def _require(name: str) -> str:
 
 _driver = "postgresql+psycopg"
 _user = os.getenv("DB_USER", "postgres")
-_pwd = _require("DB_PASSWORD") if os.getenv("APP_ENV", "development") != "test" else os.getenv("DB_PASSWORD", "test")
+_pwd = (
+    _require("DB_PASSWORD")
+    if os.getenv("APP_ENV", "development") != "test"
+    else os.getenv("DB_PASSWORD", "test")
+)
 _host = os.getenv("DB_HOST", "localhost")
 _port = os.getenv("DB_PORT", "5432")
 _name = os.getenv("DB_NAME", "consensus")
