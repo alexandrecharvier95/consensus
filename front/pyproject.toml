@@ -24,4 +24,4 @@ target-version = "py312"
 select = ["E", "F", "I", "UP"]
 
 [tool.hatch.build.targets.wheel]
-packages = ["consensus_front"]
+packages = ["src/consensus_front"]
