@@ -1,7 +1,7 @@
 FROM python:3.12-slim
 
 # Install uv
-COPY --from=ghcr.io/astral-sh/uv:latest /uv /uvx /usr/local/bin/
+COPY --from=ghcr.io/astral-sh/uv:0.4.30 /uv /uvx /usr/local/bin/
 
 # Install Node.js (required by Reflex for the frontend build)
 RUN apt-get update && apt-get install -y --no-install-recommends \
