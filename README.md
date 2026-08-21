@@ -2,10 +2,6 @@
 
 **Consensus** est une plateforme collaborative de vote et de suivi des prix du carburant.
 
-## Licence
-
-Ce projet est propriétaire. Voir le fichier [LICENSE](./LICENSE) pour plus de détails.
-
 ## Stack technique
 
 | Couche      | Technologie                          |
