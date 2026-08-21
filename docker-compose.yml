@@ -37,16 +37,16 @@ services:
       db:
         condition: service_healthy
 
-  gui:
+  frontend:
     build:
-      context: ./gui
+      context: ./frontend
       dockerfile: Dockerfile
     restart: unless-stopped
     environment:
       API_URL: "http://backend:8000"
       APP_ENV: ${APP_ENV:-dev}
     volumes:
-      - ./gui:/app
+      - ./frontend:/app
     ports:
       - "3000:3000"
       - "8001:8001"

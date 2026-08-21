@@ -32,7 +32,7 @@ docker compose up --build
 ```
 
 L'application sera disponible sur :
-- **Frontend (GUI)** : http://localhost:3000
+- **Frontend** : http://localhost:3000
 - **Backend API** : http://localhost:8000
 - **Documentation API** : http://localhost:8000/docs
 

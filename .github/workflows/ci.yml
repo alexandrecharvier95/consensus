@@ -40,12 +40,12 @@ jobs:
       - name: Run tests
         run: uv run pytest --tb=short -q
 
-  lint-and-test-gui:
-    name: Lint & Test - GUI
+  lint-and-test-frontend:
+    name: Lint & Test - Frontend
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: gui
+        working-directory: frontend
 
     steps:
       - uses: actions/checkout@v4
