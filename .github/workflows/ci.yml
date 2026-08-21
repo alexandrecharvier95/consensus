@@ -10,12 +10,12 @@ permissions:
   contents: read
 
 jobs:
-  lint-and-test-back:
+  lint-and-test-backend:
     name: Lint & Test - Backend
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: back
+        working-directory: backend
 
     steps:
       - uses: actions/checkout@v4
@@ -40,12 +40,12 @@ jobs:
       - name: Run tests
         run: uv run pytest --tb=short -q
 
-  lint-and-test-front:
-    name: Lint & Test - Frontend
+  lint-and-test-gui:
+    name: Lint & Test - GUI
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: front
+        working-directory: gui
 
     steps:
       - uses: actions/checkout@v4

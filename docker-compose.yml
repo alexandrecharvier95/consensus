@@ -27,7 +27,7 @@ services:
       DB_USER: ${DB_USER:-postgres}
       DB_PASSWORD: ${DB_PASSWORD:?DB_PASSWORD must be set}
       DB_NAME: ${DB_NAME:-consensus}
-      APP_ENV: ${APP_ENV:-development}
+      APP_ENV: ${APP_ENV:-dev}
     volumes:
       - ./back:/app
     ports:

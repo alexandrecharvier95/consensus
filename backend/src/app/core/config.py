@@ -15,8 +15,8 @@ _driver = "postgresql+psycopg"
 _user = os.getenv("DB_USER", "postgres")
 _pwd = (
     _require("DB_PASSWORD")
-    if os.getenv("APP_ENV", "development") != "test"
-    else os.getenv("DB_PASSWORD", "test")
+    if os.getenv("APP_ENV", "dev") != "uat"
+    else os.getenv("DB_PASSWORD", "uat")
 )
 _host = os.getenv("DB_HOST", "localhost")
 _port = os.getenv("DB_PORT", "5432")
@@ -26,4 +26,4 @@ DATABASE_URL: str = os.getenv(
     "DATABASE_URL",
     f"{_driver}://{_user}:{_pwd}@{_host}:{_port}/{_name}",
 )
-APP_ENV: str = os.getenv("APP_ENV", "development")
+APP_ENV: str = os.getenv("APP_ENV", "dev")

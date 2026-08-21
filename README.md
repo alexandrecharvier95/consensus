@@ -60,7 +60,7 @@ docker compose down -v
 ### Backend
 
 ```bash
-cd back
+cd backend
 uv sync
 uv run uvicorn app.main:app --reload
 ```
@@ -68,7 +68,7 @@ uv run uvicorn app.main:app --reload
 ### Frontend
 
 ```bash
-cd front
+cd gui
 uv sync
 uv run reflex run
 ```
@@ -78,7 +78,7 @@ uv run reflex run
 ## Migrations de base de données
 
 ```bash
-cd back
+cd backend
 
 # Créer une nouvelle migration (autogenerate)
 uv run alembic revision --autogenerate -m "description"
@@ -109,14 +109,14 @@ uv run ruff format --check .
 
 ## Variables d'environnement
 
-| Variable      | Description                        | Défaut       |
-|---------------|------------------------------------|--------------|
-| `DB_HOST`     | Hôte PostgreSQL                    | `localhost`  |
-| `DB_PORT`     | Port PostgreSQL                    | `5432`       |
-| `DB_USER`     | Utilisateur PostgreSQL             | `postgres`   |
-| `DB_PASSWORD` | Mot de passe PostgreSQL            | `postgres`   |
-| `DB_NAME`     | Nom de la base de données          | `consensus`  |
-| `APP_ENV`     | Environnement applicatif           | `development`|
+| Variable      | Description                        | Défaut      |
+|---------------|------------------------------------|-------------|
+| `DB_HOST`     | Hôte PostgreSQL                    | `localhost` |
+| `DB_PORT`     | Port PostgreSQL                    | `5432`      |
+| `DB_USER`     | Utilisateur PostgreSQL             | `user`      |
+| `DB_PASSWORD` | Mot de passe PostgreSQL            | `password`  |
+| `DB_NAME`     | Nom de la base de données          | `consensus` |
+| `APP_ENV`     | Environnement applicatif           | `dev`       |
 
 ---
 
