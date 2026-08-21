@@ -2,6 +2,8 @@ FROM python:3.14-slim
 
 # Install uv
 COPY --from=ghcr.io/astral-sh/uv:0.4.30 /uv /uvx /usr/local/bin/
+ENV UV_PROJECT_ENVIRONMENT=/opt/venv
+ENV UV_LINK_MODE=copy
 
 WORKDIR /app
 
