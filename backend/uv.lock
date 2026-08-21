@@ -78,7 +78,7 @@ wheels = [
 ]
 
 [[package]]
-name = "consensus-back"
+name = "consensus-backend"
 version = "0.1.0"
 source = { editable = "." }
 dependencies = [

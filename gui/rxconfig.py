@@ -1,6 +1,4 @@
 import reflex as rx
 
-config = rx.Config(
-    app_name="consensus_front",
-    api_url="http://localhost:8000",
-)
+plugins = [rx.plugins.SitemapPlugin(), rx.plugins.RadixThemesPlugin()]
+config = rx.Config(app_name="consensus_gui", plugins=plugins)

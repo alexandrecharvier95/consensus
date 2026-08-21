@@ -77,7 +77,7 @@ dev = [
 ]
 
 [package.metadata]
-requires-dist = [{ name = "reflex", specifier = ">=0.6.0" }]
+requires-dist = [{ name = "reflex", specifier = ">=0.9.8.post1" }]
 
 [package.metadata.requires-dev]
 dev = [{ name = "ruff", specifier = ">=0.5.0" }]

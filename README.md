@@ -2,7 +2,9 @@
 
 **Consensus** est une plateforme collaborative de vote et de suivi des prix du carburant.
 
----
+## Licence
+
+Ce projet est propriétaire. Voir le fichier [LICENSE](./LICENSE) pour plus de détails.
 
 ## Stack technique
 
@@ -15,9 +17,8 @@
 | Qualité code | Ruff (lint + format)                |
 | Conteneurs  | Docker · Docker Compose              |
 
----
 
-## Lancement rapide (Docker)
+## Déploiement
 
 ### Prérequis
 
@@ -27,99 +28,69 @@
 ### Démarrer l'application
 
 ```bash
-git clone https://github.com/alexandrecharvier95/consensus.git
-cd consensus
 docker compose up --build
 ```
 
 L'application sera disponible sur :
-- **Frontend** : http://localhost:3000
+- **Frontend (GUI)** : http://localhost:3000
 - **Backend API** : http://localhost:8000
 - **Documentation API** : http://localhost:8000/docs
 
-Pour arrêter :
+### Arrêter l'application
+
 ```bash
 docker compose down
 ```
 
-Pour supprimer également les volumes (données PostgreSQL) :
+Ou pour supprimer également les données PostgreSQL (volumes) :
 ```bash
 docker compose down -v
 ```
 
----
+### Variables d'environnement
 
-## Développement local (sans Docker)
+Voir `docker-compose.yml` pour les variables d'environnement utilisées par l'application. Vous devez créer un fichier `.env` à partir de `.env.example` à la racine du projet pour définir vos propres valeurs.
 
-### Prérequis
+## Développement
 
-- Python ≥ 3.12
+### Gestion des dépendances Python
+
 - [uv](https://docs.astral.sh/uv/) (`curl -LsSf https://astral.sh/uv/install.sh | sh`)
-- PostgreSQL 16 en local (ou via Docker : `docker compose up db`)
 
-### Backend
-
-```bash
-cd backend
-uv sync
-uv run uvicorn app.main:app --reload
-```
-
-### Frontend
-
-```bash
-cd gui
-uv sync
-uv run reflex run
-```
-
----
-
-## Migrations de base de données
+### Migrations de base de données
 
 ```bash
 cd backend
+```
 
-# Créer une nouvelle migration (autogenerate)
+Créer une nouvelle migration (autogénération) :
+```bash
 uv run alembic revision --autogenerate -m "description"
+```
 
-# Appliquer les migrations
+Appliquer les migrations :
+```bash
 uv run alembic upgrade head
+```
 
-# Annuler la dernière migration
+Annuler la dernière migration :
+```bash
 uv run alembic downgrade -1
 ```
 
----
+## Qualité du code
 
-## Qualité de code
-
+Linter :
 ```bash
-# Lint
 uv run ruff check .
-
-# Format
-uv run ruff format .
-
-# Vérification du format (sans modification)
-uv run ruff format --check .
 ```
 
----
+Formater :
+```bash
+uv run ruff format .
+```
 
-## Variables d'environnement
-
-| Variable      | Description                        | Défaut      |
-|---------------|------------------------------------|-------------|
-| `DB_HOST`     | Hôte PostgreSQL                    | `localhost` |
-| `DB_PORT`     | Port PostgreSQL                    | `5432`      |
-| `DB_USER`     | Utilisateur PostgreSQL             | `user`      |
-| `DB_PASSWORD` | Mot de passe PostgreSQL            | `password`  |
-| `DB_NAME`     | Nom de la base de données          | `consensus` |
-| `APP_ENV`     | Environnement applicatif           | `dev`       |
-
----
-
-## Licence
-
-Ce projet est propriétaire. Voir le fichier [LICENSE](./LICENSE) pour plus de détails.
+Vérifier le format sans modification :
+```bash
+uv run ruff format --check .
+```

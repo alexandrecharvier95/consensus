@@ -10,9 +10,9 @@ config = context.config
 if config.config_file_name is not None:
     fileConfig(config.config_file_name)
 
-# Import Base from the app to support autogenerate
-from app.core.database import Base  # noqa: E402
-from app.models import *  # noqa: F401,F403,E402
+# Import Base from the consensus_backend to support autogenerate
+from consensus_backend.core.database import Base  # noqa: E402
+from consensus_backend.models import *  # noqa: F401,F403,E402
 
 target_metadata = Base.metadata
 
